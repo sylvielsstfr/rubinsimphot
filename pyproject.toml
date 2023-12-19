@@ -66,3 +66,20 @@ testpaths = [
 
 [tool.coverage.run]
 omit=["src/rubinsimphot/_version.py"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]  # list of folders that contain the packages (["."] by default)
+include = ["rubinsimphot",
+"rubinsimphot.phot_utils",
+"rubinsimphot.data",
+"rubinsimphot.phot_utils.utils",
+"rubinsimphot.utils",
+]  # package names should match these glob patterns (["*"] by default)
+
+exclude = ["rubinsimphot.tests*"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = true  # to activate scanning PEP 420 namespaces (true by default)
+
+[tool.setuptools.package-data]
+rubinsimphot = ["*.txt","*.dat","*.md"]
+"rubinsimphot.data" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
