@@ -3,6 +3,8 @@ __all__ = ("get_data_dir", "data_versions", "get_baseline")
 import glob
 import os
 
+import rubin_sim_data
+
 
 def get_data_dir():
     """Get the location of the rubin_sim data directory.
@@ -12,9 +14,13 @@ def get_data_dir():
     data_dir : `str`
         Path to the rubin_sim data directory.
     """
+
+    data_dir = rubin_sim_data.__path__[0]
+    if os. path. isdir(data_dir):
+        return data_dir
+    
     # See if there is an environment variable with the path
     data_dir = os.getenv("RUBIN_SIM_DATA_DIR")
-
     # Set the root data directory
     if data_dir is None:
         data_dir = os.path.join(os.getenv("HOME"), "rubin_sim_data")

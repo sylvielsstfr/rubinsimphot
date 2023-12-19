@@ -43,6 +43,7 @@ dev = [
     "astropy",
     "six",
     "healpy",
+    "pandas",
 ]
 
 #[metadata]
@@ -66,3 +67,22 @@ testpaths = [
 
 [tool.coverage.run]
 omit=["src/rubinsimphot/_version.py"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]  # list of folders that contain the packages (["."] by default)
+include = ["rubinsimphot",
+"rubinsimphot.phot_utils",
+"rubinsimphot.data",
+"rubinsimphot.site_models",
+"rubinsimphot.phot_utils.utils",
+"rubinsimphot.utils",
+]  # package names should match these glob patterns (["*"] by default)
+
+exclude = ["rubinsimphot.tests*"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = true  # to activate scanning PEP 420 namespaces (true by default)
+
+[tool.setuptools.package-data]
+rubin_sim_data = ["*.txt","*.dat","*.md"]
+"rubin_sim_data.throughputs" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
+"rubin_sim_data.photometry_sample" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
