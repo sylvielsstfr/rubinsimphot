@@ -81,5 +81,6 @@ exclude = ["rubinsimphot.tests*"]  # exclude packages matching these glob patter
 namespaces = true  # to activate scanning PEP 420 namespaces (true by default)
 
 [tool.setuptools.package-data]
-rubinsimphot = ["*.txt","*.dat","*.md"]
-"rubinsimphot.data" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
+rubin_sim_data = ["*.txt","*.dat","*.md"]
+"rubin_sim_data.throughputs" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
+"rubin_sim_data.photometry_sample" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
