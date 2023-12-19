@@ -43,6 +43,7 @@ dev = [
     "astropy",
     "six",
     "healpy",
+    "pandas",
 ]
 
 #[metadata]
@@ -73,6 +74,7 @@ where = ["src"]  # list of folders that contain the packages (["."] by default)
 include = ["rubinsimphot",
 "rubinsimphot.phot_utils",
 "rubinsimphot.data",
+"rubinsimphot.site_models",
 "rubinsimphot.phot_utils.utils",
 "rubinsimphot.utils",
 ]  # package names should match these glob patterns (["*"] by default)
