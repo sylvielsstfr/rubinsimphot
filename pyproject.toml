@@ -44,6 +44,7 @@ dev = [
     "six",
     "healpy",
     "pandas",
+    "openpyxl"
 ]
 
 #[metadata]
