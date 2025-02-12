@@ -16,6 +16,7 @@ classifiers = [
 dynamic = ["version"]
 dependencies = [
     "ipykernel", # Support for Jupyter notebooks
+    "palpy",
 ]
 
 # On a mac, install optional dependencies with `pip install '.[dev]'` (include the single quotes)
@@ -44,7 +45,8 @@ dev = [
     "six",
     "healpy",
     "pandas",
-    "openpyxl"
+    "openpyxl",
+    "palpy",
 ]
 
 #[metadata]
@@ -78,12 +80,13 @@ include = ["rubinsimphot",
 "rubinsimphot.site_models",
 "rubinsimphot.phot_utils.utils",
 "rubinsimphot.utils",
+"rubin_sim_data",
 ]  # package names should match these glob patterns (["*"] by default)
 
 exclude = ["rubinsimphot.tests*"]  # exclude packages matching these glob patterns (empty by default)
 namespaces = true  # to activate scanning PEP 420 namespaces (true by default)
 
 [tool.setuptools.package-data]
-rubin_sim_data = ["*.txt","*.dat","*.md"]
+"rubin_sim_data" = ["*.txt","*.dat","*.md"]
 "rubin_sim_data.throughputs" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
 "rubin_sim_data.photometry_sample" = ["*.h5","*.pickle","*.txt","*.dat","*.md"]
